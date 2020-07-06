@@ -49,13 +49,10 @@ class Account
     @@acc_details.each do |account|
       if acc_no == account.acc_no 
         @@acc_no = account.acc_no 
-        true
-        break
       end
     end
     if @@acc_no == 0
       puts "Invalid account number"
-      false 
     end
   end
 
