@@ -31,6 +31,10 @@ class Account
       index += 1
       if acc_no == account.acc_no 
         @@acc_details.delete_at(index)
+        break
+      end
+      if index == @@acc_details.length-1 && acc_no != account.acc_no
+        puts "Invalid account no"
       end
     end
   end
@@ -45,10 +49,13 @@ class Account
     @@acc_details.each do |account|
       if acc_no == account.acc_no 
         @@acc_no = account.acc_no 
+        true
+        break
       end
     end
     if @@acc_no == 0
       puts "Invalid account number"
+      false 
     end
   end
 
