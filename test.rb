@@ -61,7 +61,7 @@ class TestAccount < Minitest::Test
       Account.create_acc(ele)
     end
     acc_no = 1
-    Account.select_acc(acc)
+    Account.select_acc(acc_no)
     account = Account.acc_details.first
     assert_equal account.name, arr.first
     assert_equal account.acc_no, acc_no
