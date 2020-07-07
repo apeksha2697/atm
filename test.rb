@@ -27,7 +27,6 @@ class TestAccount < Minitest::Test
     Account.delete
   end 
 
-  
   def test_to_delete_acc_with_invalid_acc_no
     arr = ["xyz","abc"]
     arr.each do |ele|
@@ -95,7 +94,6 @@ class TestAccount < Minitest::Test
     Account.delete
   end
 
-  
   def test_to_select_acc_with_invalid_acc_no
     arr = ["xyz","abc"]
     arr.each do |ele|
@@ -126,7 +124,6 @@ class TestAccount < Minitest::Test
     Account.delete
   end
 
-  
   def test_to_deposit_money_with_invalid_details
     arr = ["xyz","abc"]
     arr.each do |ele|
@@ -202,5 +199,5 @@ class TestAccount < Minitest::Test
     assert_equal account.balance, 0
     Account.delete
   end
-  
+
 end 
