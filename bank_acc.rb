@@ -43,16 +43,22 @@ class Account
     @@acc_details.each do |account|
       puts "Account number: #{account.acc_no}"
     end
+    if @@acc_details.length == 0
+      puts "No record found"
+    end
   end
 
   def self.select_acc(acc_no)
-    @@acc_details.each do |account|
-      if acc_no == account.acc_no 
+    if acc_no != 0
+      @@acc_details.each do |account|
+        if acc_no == account.acc_no 
         @@acc_no = account.acc_no 
+        end
       end
     end
     if @@acc_no == 0
       puts "Invalid account number"
+      @@acc_no = 0
     end
   end
 
@@ -65,20 +71,24 @@ class Account
   end
 
   def self.deposit_money(amount)
-    @@acc_details.each do |account|
-      if @@acc_no == account.acc_no 
-        account.balance = account.balance + amount
+    if amount > 0
+      @@acc_details.each do |account|
+        if @@acc_no == account.acc_no 
+          account.balance = account.balance + amount
+        end
       end
     end
   end
 
   def self.withdraw_money(amount)
-    @@acc_details.each do |account|
-      if @@acc_no == account.acc_no 
-        if amount > account.balance
-          puts "Insufficient balance"
-        else 
-          account.balance = account.balance - amount
+    if amount > 0
+      @@acc_details.each do |account|
+        if @@acc_no == account.acc_no 
+          if amount > account.balance
+            puts "Insufficient balance"
+          else 
+            account.balance = account.balance - amount
+          end
         end
       end
     end
@@ -87,6 +97,11 @@ class Account
   def self.delete
     @@acc_details = []
     @@acc_counter = 0
+    @@acc_no = 0
+  end
+
+  def self.exit
+    @@acc_no = 0
   end
 
 end

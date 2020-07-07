@@ -22,7 +22,7 @@ class Main
 
   def self.amount
     puts "enter the amount"
-    amount = self.user_integer_input
+    amount = user_integer_input
   end
 
   def self.main
@@ -41,8 +41,8 @@ class Main
         when 3
           Account.list_all_acc
         when 4
-          Account.select_acc(acc_no = self.user_acc_no)
-          while true
+         acc_no = Account.select_acc(acc_no = self.user_acc_no)
+          while acc_no != 0 
             puts "1: check balance"
             puts "2: deposit money"
             puts "3: withdraw money"
@@ -56,11 +56,14 @@ class Main
               when 3
                 Account.withdraw_money( amount = self.amount)
               when 4
+                Account.exit
                 break
+              else puts "Choose a valid option"
             end
           end
         when 5 
           break
+        else puts "Choose a valid option"
       end
     end
   end   
