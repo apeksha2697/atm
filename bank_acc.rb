@@ -93,13 +93,13 @@ class Account
     end
   end
   
-  def self.exit
-    @@acc_no = 0
-  end
-
   def self.delete
     @@acc_details = []
     @@acc_counter = 0
+    @@acc_no = 0
+  end
+
+   def self.exit
     @@acc_no = 0
   end
 
