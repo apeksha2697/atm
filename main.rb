@@ -58,7 +58,7 @@ class Main
               when 4
                 Account.exit
                 break
-              else puts "Choose a valid option"
+              else puts "Choose a valid Option"
             end
           end
         when 5 
