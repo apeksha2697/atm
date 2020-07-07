@@ -6,7 +6,6 @@ class Account
   attr_accessor :balance
   attr_accessor :name
 
-
   def initialize(acc_no,balance,name)
     @acc_no = acc_no
     @balance = balance
